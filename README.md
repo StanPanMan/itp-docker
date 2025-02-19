@@ -18,7 +18,7 @@ TBD
     chmod +x scripts/init.sh;
     ./scripts/init.sh
     ```
-2. Up the compse stack:
+2. To Up the compse stack:
     TBD
-3. Down the compose stack:
+3. To Down the compose stack:
     TBD
