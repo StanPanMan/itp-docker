@@ -5,7 +5,7 @@ This is a local deploymnet to servve the GitHub Pages app of [stanpanman.github.
 - requests to `http://localhost:8081` get routed to the `fp-svc` which has a webserver on port `7901`
     - for `http://fp-svc:7901/`, the container proxies to `http://hp-svc:6969/`
     - for `http://fp-svc:7901/pages-site`, the container serves the pages site stored inside the image at `/usr/share/nginx/html` (this came from a Git repo)
-    - the `hp-svc` serves a landing page on port `6969` that comes from a volume and has a link to `http://localhost:8081/pages-site`
+    - the `hp-svc` serves a landing page on port `6969` that comes from a volume and has a link to `http://localhost:8081/pages-site/`
 
 
 

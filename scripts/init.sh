@@ -23,7 +23,7 @@ docker stop nginx-temp
 
 # find & replace 80 to 7901 in volumes/final-project/config/conf.d/default.conf
 # sed for find & replace
-sed -i 's/80/6969/g' volumes/final-project/config/conf.d/default.conf
+sed -i 's/80/7901/g' volumes/final-project/config/conf.d/default.conf
 
 LOC_BLOCK=$(cat <<EOF
     location / {
