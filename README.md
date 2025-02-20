@@ -27,7 +27,21 @@ This is a local deploymnet to servve the GitHub Pages app of [stanpanman.github.
     ```bash
     docker compose up -d
     ```
-3. To Down the compose stack:
+3. Visit the homepage by going to [localhost:8081](http://localhost:8081) in the browser.
+4. Click the link you find on the homepage
+5. To monitor services, attach to the watchdog and curl different services.
     ```bash
-    docker compose down
+    docker compose attach watchdog-svc;
+    ```
+    (from inside watchdog-c)
+    ```sh
+    apk add curl;
+    curl http://fp-svc:7901/; # proxied to http://hp-svc:6969/ (homepage)
+    curl http://hp-svc:6969/; # hits http://hp-svc:6969/ (homepage)
+    curl http://fp-svc:7901/pages-site/ # hit the pages site (pages-site)
+    ```
+    Use `ctrl-d` to exit and restart that main shell precess.
+6. To Down the compose stack:
+    ```bash
+    docker compose down;
     ```
