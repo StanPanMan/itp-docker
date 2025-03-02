@@ -1,7 +1,8 @@
+# Ignore all files
 *
+# Exceptions
 !/README.md
 !/docker-compose.yaml
-!/Dockerfile
 !/scripts/
 scripts/*
 !/scripts/init.sh

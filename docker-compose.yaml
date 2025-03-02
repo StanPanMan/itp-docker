@@ -1,37 +1,14 @@
 services:
-  fp-svc:
-    build:
-      context: .
-      additional_contexts:
-        - final-project=https://github.com/StanPanMan/pages-site.git
-    image: StanPanMan/final-project-image:docker-compose-build-tag
-    container_name: fp-c
-    ports:
-      - 8081:7901
-    volumes:
-      - ./volumes/final-project/config/conf.d:/etc/nginx/conf.d
-      - ./volumes/final-project/config/nginx.conf:/etc/nginx/nginx.conf
-    depends_on:
-      - hp-svc
-
-  hp-svc:
+  http-svc:
     image: nginx:alpine3.21
-    container_name: hp-c
+    container_name: http-c
+    ports:
+      - 8080:80
     volumes:
-      - ./volumes/home-page/config/conf.d:/etc/nginx/conf.d
-      - ./volumes/home-page/config/nginx.conf:/etc/nginx/nginx.conf
-      - ./volumes/home-page/html:/usr/share/nginx/html
+      - ./volumes/config/conf.d:/etc/nginx/conf.d
+      - ./volumes/config/nginx.conf:/etc/nginx/nginx.conf
+      - ./volumes/html:/usr/share/nginx/html
 
-  watchdog-svc:
-    image: alpine:3.21.3
-    container_name: watchdog-c
-    stdin_open: true
-    tty: true
-    restart: unless-stopped
-    depends_on:
-      - fp-svc
-
-    
 
 
 

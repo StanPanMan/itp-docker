@@ -1,5 +1,25 @@
 #!/bin/sh
 # Create directories
+
+mkdir -p volumes/{config,html}
+rm -rf volumes/{config,html}/*
+
+# Run a temporary Nginx container
+docker run --rm -d --name nginx-temp nginx:alpine3.21
+
+# Copy nginx.conf, conf.d, & html from the container
+docker cp nginx-temp:/etc/nginx/conf.d volumes/config
+docker cp nginx-temp:/etc/nginx/nginx.conf volumes/config
+
+docker cp nginx-temp:/usr/share/nginx/html volumes
+
+# Stop the temporary container
+docker stop nginx-temp
+
+echo Reached-1
+exit 0
+echo Reached-2
+
 mkdir -p volumes/final-project/config
 rm -rf volumes/final-project/config/*
 mkdir -p volumes/home-page/{config,html}
