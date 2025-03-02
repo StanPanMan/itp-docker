@@ -23,6 +23,7 @@ TBD
     chmod +x scripts/init.sh;
     ./scripts/init.sh
     ```
+2. Some manual changes TB Documented
 2. To Up the compse stack:
     ```bash
     docker compose up -d
