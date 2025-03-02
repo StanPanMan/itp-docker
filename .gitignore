@@ -1,9 +1,1 @@
-# Ignore all files
-*
-# Exceptions
-!/README.md
-!/docker-compose.yaml
-!/scripts/
-scripts/*
-!/scripts/init.sh
-!/.gitignore
+volumes

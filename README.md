@@ -6,12 +6,12 @@ This is a local deploymnet to run server-side php scripts integrated with an NGI
 
 ## Architecture
 
-TBD
+An NGINX container serves HTTP traffic on prot 8080 and uses a PHP-FPM container to run the PHP scripts.
 
 
 ## Prerequisites
 - Docker version 27.4.0, build bde2b89
-- sh shell with typical tools and perl
+- sh shell with typical tools
 ## Testing Notes
 - Tested on Windows 11 Home
 - Tested with Docker version 27.4.0, build bde2b89
@@ -23,7 +23,6 @@ TBD
     chmod +x scripts/init.sh;
     ./scripts/init.sh
     ```
-2. Some manual changes TB Documented
 2. To Up the compse stack:
     ```bash
     docker compose up -d
