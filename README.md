@@ -1,6 +1,6 @@
 # Docker Static App Deployment
 
-Haha this is from PHP branch
+Haha this is from PHP branch. More from php.
 
 This is a local deploymnet to servve the GitHub Pages app of [stanpanman.github.io/pages-site/](https://stanpanman.github.io/pages-site/)
 
