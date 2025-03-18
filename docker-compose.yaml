@@ -5,14 +5,29 @@ services:
     ports:
       - 8080:80
     volumes:
-      - ./volumes/config/conf.d:/etc/nginx/conf.d
-      - ./volumes/config/nginx.conf:/etc/nginx/nginx.conf
+      - ./volumes/http/config/conf.d:/etc/nginx/conf.d
+      - ./volumes/http/config/nginx.conf:/etc/nginx/nginx.conf
       - ./volumes/html:/usr/share/nginx/html
+    depends_on:
+      - php-svc
   php-svc:
-    image: php:8.3.18RC1-fpm-alpine3.21
+    build:
+      context: .
+      dockerfile: php.Dockerfile
     container_name: php-c
     volumes:
       - ./volumes/html:/usr/share/nginx/html
-
+    env_file:
+      - db.env
+    depends_on:
+      - db-svc
+  db-svc:
+    image: mysql:8.0.41-bookworm
+    container_name: db-c
+    env_file:
+      - db.env
+    volumes:
+      - ./volumes/db/data:/var/lib/mysql
+      - ./volumes/db/init:/docker-entrypoint-initdb.d
 
 
