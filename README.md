@@ -18,18 +18,19 @@ This is a local deployment to serve the GitHub Pages app of [stanpanman.github.i
 - Tested with Git Bash
 
 ## Usage
-1. Initialize the file structure and volumes.
+1. Start up Docker Desktop before using docker commands.
+2. Initialize the file structure and volumes.
     ```bash
     chmod +x scripts/init.sh;
     ./scripts/init.sh
     ```
-2. To Up the compose stack:
+3. To Up the compose stack:
     ```bash
     docker compose up -d
     ```
-3. Visit the homepage by going to [localhost:8081](http://localhost:8081) in the browser.
-4. Click the link you find on the homepage
-5. To monitor services, attach to the watchdog and curl different services.
+4. Visit the homepage by going to [localhost:8081](http://localhost:8081) in the browser.
+5. Click the link you find on the homepage
+6. To monitor services, attach to the watchdog and curl different services.
     ```bash
     docker compose attach watchdog-svc;
     ```
@@ -41,7 +42,7 @@ This is a local deployment to serve the GitHub Pages app of [stanpanman.github.i
     curl http://fp-svc:7901/pages-site/ # hit the pages site (pages-site)
     ```
     Use `ctrl-d` to exit and restart that main shell process.
-6. To Down the compose stack:
+7. To Down the compose stack:
     ```bash
     docker compose down;
     ```
