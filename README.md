@@ -1,5 +1,5 @@
 # Docker Static App Deployment
-This is a local deploymnet to servve the GitHub Pages app of [stanpanman.github.io/pages-site/](https://stanpanman.github.io/pages-site/)
+This is a local deployment to serve the GitHub Pages app of [stanpanman.github.io/pages-site/](https://stanpanman.github.io/pages-site/)
 
 ## Architecture
 - requests to `http://localhost:8081` get routed to the `fp-svc` which has a webserver on port `7901`
@@ -23,7 +23,7 @@ This is a local deploymnet to servve the GitHub Pages app of [stanpanman.github.
     chmod +x scripts/init.sh;
     ./scripts/init.sh
     ```
-2. To Up the compse stack:
+2. To Up the compose stack:
     ```bash
     docker compose up -d
     ```
@@ -40,7 +40,7 @@ This is a local deploymnet to servve the GitHub Pages app of [stanpanman.github.
     curl http://hp-svc:6969/; # hits http://hp-svc:6969/ (homepage)
     curl http://fp-svc:7901/pages-site/ # hit the pages site (pages-site)
     ```
-    Use `ctrl-d` to exit and restart that main shell precess.
+    Use `ctrl-d` to exit and restart that main shell process.
 6. To Down the compose stack:
     ```bash
     docker compose down;
